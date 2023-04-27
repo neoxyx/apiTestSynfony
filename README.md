@@ -1,4 +1,4 @@
-# apiTestSynfony
+# Api Test Symfony
 
 Iniciar el servidor local con el comando del cli de symfony server:start
 Endpoints:
