@@ -1,6 +1,7 @@
 # Api Test Symfony
 Configurar el .env segun su base de datos
-Lanzar migraciones con el comando php bin/console doctrine:migrations:migrate
+Lanzar migraciones con el comando: php bin/console doctrine:migrations:migrate
+Crear llaves publicas y privadas en el proyecto para el JWT con el comando: php bin/console lexik:jwt:generate-keypair
 
 Iniciar el servidor local con el comando del cli de symfony server:start
 
