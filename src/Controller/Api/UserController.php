@@ -20,9 +20,11 @@ class UserController extends AbstractController
      */
     public function index(ManagerRegistry $doctrine): Response
     {
-        $user = $doctrine->getRepository(User::class)->findAll();        
+        $user = $doctrine->getRepository(User::class)->findAll();
+        $created = $this->getUser();        
         return $this->json([
-            'users' => $user
+            'users' => $user,
+            'created_by' => $created
         ]);
     }
 }
