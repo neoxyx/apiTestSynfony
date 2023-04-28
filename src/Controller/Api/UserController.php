@@ -3,6 +3,7 @@
 namespace App\Controller\Api;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,12 +19,11 @@ class UserController extends AbstractController
     /**
      * @Route("/user", name="list_users")
      */
-    public function index(ManagerRegistry $doctrine): Response
+    public function index(UserRepository $userRepository): Response
     {
-        $user = $doctrine->getRepository(User::class)->findAll();
         $created = $this->getUser();        
         return $this->json([
-            'users' => $user,
+            'users' => $userRepository->findAll(),
             'created_by' => $created
         ]);
     }
